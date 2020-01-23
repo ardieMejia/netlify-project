@@ -6,10 +6,36 @@
         <title>My app</title>
 
         <style>
+         .column { /* add column wrap around card */
+             float: left;
+             width: 25%;
+             padding: 0 10px;
+         }
+
+         /* When adding new row, there'll be extra padding, remove them*/
+         .row {margin: 0 -5px;}
+
+         /* Clear floats after the columns */
+         /* Dont know what this does */
+         .row:after {
+             content: "";
+             display: table;
+             clear: both;
+         }
+
+         /* When it reduces to 600px*/
+         @media screen and (max-width: 600px) {
+             .column {
+                 width: 100%;
+                 display: block;
+                 margin-bottom: 20px;
+             }
+         }
+
          .card {
              box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
              transition: 0.3s;
-             width: 40%;
+
          }
 
          .card:hover {
@@ -29,9 +55,90 @@
     <body>
 
 
-
         <h2>Card</h2>
+<div class="row">
+<div class="column">
+        <div class="card">
+            
+            <div class="container">
+                <h4><b>Failed Tenon Saw</b></h4> 
+                <p>
+                    This is my failed tenon saw. It was my first ever attempt at making a tenon saw with a brass back. The real devil that defeated this project was the brass back. Steel bending is not a joke, it is a skill my itself. At the time of making this, I dremeled a rough groove with no jig to guide me, and bent it following a Youtube guide online, where the guy hammered a steel held in a vise to bend it. Ther result was quite ugly, and not straight. Bending it was also not easy, despite dremeling to almost 1/8 " thickness. If I would redo this, I would spend time making a proper dremel guiding jig, heating the brass to a high temperature, to make it softer.
+                </p> 
+            </div>
+            <div class="img-container">
+                <img src="./images/failed-tenon-saw.jpg" alt="tenon saw" style="width:50%">
+            </div>
 
+        </div>
+</div>
+
+<div class="column">
+        <div class="card">
+            
+            <div class="container">
+                <h4><b>Failed Tenon Saw</b></h4> 
+                <p>
+                    This is my failed tenon saw. It was my first ever attempt at making a tenon saw with a brass back. The real devil that defeated this project was the brass back. Steel bending is not a joke, it is a skill my itself. At the time of making this, I dremeled a rough groove with no jig to guide me, and bent it following a Youtube guide online, where the guy hammered a steel held in a vise to bend it. Ther result was quite ugly, and not straight. Bending it was also not easy, despite dremeling to almost 1/8 " thickness. If I would redo this, I would spend time making a proper dremel guiding jig, heating the brass to a high temperature, to make it softer.  
+                </p> 
+            </div>
+    <div class="img-container">
+    <img src="./images/failed-tenon-saw.jpg" alt="tenon saw" style="width:50%">
+            </div>
+
+        </div>
+</div>
+
+<div class="column">
+    <div class="card">
+        
+        <div class="container">
+            <h4><b>Failed Tenon Saw</b></h4> 
+            <p>
+This is a photo of a plane I took from somewhere. This is not my own plane. The image also happens to be a wallpaper size. And the content is shorter, since I have no clue what to say about this particular one.
+            </p> 
+        </div>
+    <div class="img-container">
+    <img src="./images/test.jpg" alt="tenon saw" style="width:50%">
+        </div>
+
+    </div>
+</div>
+<div class="column">
+    <div class="card">
+        
+        <div class="container">
+            <h4><b>My First Moxon Vise</b></h4> 
+            <p>
+This is my first moxon vise. This project turns out better than I expected, and pretty good for a first moxon vise build. Now that Im using constantly, it needs to be lined with leather as the wood flexes a bit much. Im guessing the wooden jaw doesnt have enough mass. The jaw is also too low that my plane would almost hit the screw handle. The leather will probably make it last longer as well, though im guessing this vise as of now, will certainly last more than 1 year of constant use. Overall, Im happy with this one, and certainly an improvement over my current work area.
+            </p> 
+        </div>
+        <div class="img-container">
+            <img src="./images/my-first-moxon-vise.jpg" alt="tenon saw" style="width:50%">
+        </div>
+
+    </div>
+</div>
+
+</div>
+<div class="row">
+    <div class="column">
+        <div class="card">
+            
+            <div class="container">
+                <h4><b>Failed Tenon Saw</b></h4> 
+                <p>
+                    This is my failed tenon saw. It was my first ever attempt at making a tenon saw with a brass back. The real devil that defeated this project was the brass back. Steel bending is not a joke, it is a skill my itself. At the time of making this, I dremeled a rough groove with no jig to guide me, and bent it following a Youtube guide online, where the guy hammered a steel held in a vise to bend it. Ther result was quite ugly, and not straight. Bending it was also not easy, despite dremeling to almost 1/8 " thickness. If I would redo this, I would spend time making a proper dremel guiding jig, heating the brass to a high temperature, to make it softer.
+                </p> 
+            </div>
+            <div class="img-container">
+                <img src="./images/failed-tenon-saw.jpg" alt="tenon saw" style="width:50%">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="column">
         <div class="card">
             
             <div class="container">
@@ -41,9 +148,29 @@
                 </p> 
             </div>
             <div class="img-container">
+                <img src="./images/failed-tenon-saw.jpg" alt="tenon saw" style="width:50%">
             </div>
-            <img src="./images/failed-tenon-saw.jpg" alt="tenon saw" style="width:50%">
+
         </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            
+            <div class="container">
+                <h4><b>Failed Tenon Saw</b></h4> 
+                <p>
+                    This is a photo of a plane I took from somewhere. This is not my own plane. The image also happens to be a wallpaper size. And the content is shorter, since I have no clue what to say about this particular one.
+                </p> 
+            </div>
+            <div class="img-container">
+                <img src="./images/test.jpg" alt="tenon saw" style="width:50%">
+            </div>
+
+        </div>
+    </div>
+
+</div>
     </body> 
 </html>
 
