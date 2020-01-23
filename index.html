@@ -2,13 +2,53 @@
 <html lang="en"> 
     <head>
         <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My app</title>
+
+        <style>
+         .card {
+             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+             transition: 0.3s;
+             width: 40%;
+         }
+
+         .card:hover {
+             box-shadow: 0 8px 16px 0 darkgrey;
+         }
+
+         .card .container {
+             padding: 2px 16px;
+         }
+
+         .card .img-container {
+             padding: 2px 16px;
+         }
+        </style>
+
     </head>
     <body>
 
-        <h1>My first netlify project</h1>
-        <p>My first article</p>
+
+
+        <h2>Card</h2>
+
+        <div class="card">
+            
+            <div class="container">
+                <h4><b>Failed Tenon Saw</b></h4> 
+                <p>
+                    This is my failed tenon saw. It was my first ever attempt at making a tenon saw with a brass back. The real devil that defeated this project was the brass back. Steel bending is not a joke, it is a skill my itself. At the time of making this, I dremeled a rough groove with no jig to guide me, and bent it following a Youtube guide online, where the guy hammered a steel held in a vise to bend it. Ther result was quite ugly, and not straight. Bending it was also not easy, despite dremeling to almost 1/8 " thickness. If I would redo this, I would spend time making a proper dremel guiding jig, heating the brass to a high temperature, to make it softer.  
+                </p> 
+            </div>
+            <div class="img-container">
+            </div>
+            <img src="./images/failed-tenon-saw.jpg" alt="tenon saw" style="width:50%">
+        </div>
     </body> 
 </html>
+
+</html>
+
 
 
 
