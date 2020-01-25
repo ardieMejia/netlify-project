@@ -17,7 +17,7 @@ h1 {
 a {
   color: #fff;
   text-decoration: none;
-  text-transform: uppercase; }
+  /* text-transform: uppercase; */ }
 
 .l-row {
   margin: 0 auto;
@@ -97,7 +97,8 @@ a {
 
 /* When adding new row, there'll be extra padding, remove them*/
 .row {
-  margin: 0 -5px; }
+  margin: 0 -5px;
+  padding-top: 50px; }
 
 /* Clear floats after the columns */
 /* Dont know what this does */
@@ -145,7 +146,8 @@ a {
   /* background: rgba(161, 44, 199, 0.31); */ }
 
 .sub-menu-parent {
-  position: relative; }
+  position: relative;
+  width: 150px; }
 
 .sub-menu {
   visibility: hidden;
@@ -154,8 +156,10 @@ a {
   position: absolute;
                     /* needs this in 
 relation to parent */
-  width: 100%;
-  z-index: -1;
+  left: -100px;
+  /*hack to center and elevate submenu from navigation*/
+  width: 300px;
+  z-index: 30;
   transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s; }
 
 .sub-menu-parent:focus .sub-menu,
@@ -165,6 +169,7 @@ relation to parent */
   /* shows sub-menu */
   opacity: 1;
   z-index: 1;
+  position: absolute;
   transform: translateY(0%);
   transition-delay: 0s, 0s, 0.3s;
   /* this removes the transition delay so the menu will be visible while the other styles transition */ }
@@ -197,6 +202,9 @@ nav > ul {
 nav > ul > li {
   display: inline-block;
   border-left: solid 1px #aaa; }
+
+nav > ul > li:first-child {
+  border-left: none; }
 
 nav > ul > li > ul > li {
   display: block;
