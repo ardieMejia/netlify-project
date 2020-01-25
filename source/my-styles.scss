@@ -1,7 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,300);
 /* Mixins */
+
+$color-background : #ecf0f1;
 body {
-  background-color: #ecf0f1;
+  background-color: $color-background;
   font-family: "Raleway", sans-serif;
   left: 0;
   overflow-x: hidden;
@@ -64,23 +66,19 @@ a {
   margin: 0;
   padding: 0;
   width: 100%; }
-
-.nav-menu .title {
-  color: #fff;
-  font-size: 18px;
-  padding: 12px 0;
-  text-align: center; }
-
-.nav-menu li {
-  border-bottom: 1px solid #2cc36c; }
-
-.nav-menu li a {
-  display: block;
-  padding: 12px 0 12px 15px;
-  width: 185px; }
-
-.nav-menu li a:hover {
-  background-color: #239c56; }
+  .nav-menu .title {
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 0;
+    text-align: center; }
+  .nav-menu li {
+    border-bottom: 1px solid #2cc36c; }
+    .nav-menu li a {
+      display: block;
+      padding: 12px 0 12px 15px;
+      width: 185px; }
+    .nav-menu li a:hover {
+      background-color: #239c56; }
 
 /* Push body and nav */
 .push-right {
@@ -117,106 +115,92 @@ a {
   transition: 0.3s; }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 darkgrey; }
+    box-shadow: 0 8px 16px 0 darkgrey;
+}
 
 .card .container {
-  padding: 2px 16px; }
+    padding: 2px 16px;
+}
 
 .card .img-container {
-  padding: 2px 16px; }
+    padding: 2px 16px;
+}
 
 /*# sourceMappingURL=my-styles.css.map */
+
+
 /* Might be cool for future projects, more fun as well */
 .filter {
-  position: relative;
-  -webkit-filter: contrast(140%) sepia(50%);
-  filter: contrast(140%) sepia(50%); }
-
+    position: relative;
+    -webkit-filter: contrast(140%) sepia(50%);
+    filter: contrast(140%) sepia(50%);
+}
 .filter::before {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  pointer-events: none;
-  mix-blend-mode: lighten;
-  /* background: rgba(161, 44, 199, 0.31); */ }
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    mix-blend-mode: lighten;
+    /* background: rgba(161, 44, 199, 0.31); */
+}
 
-.sub-menu-parent {
-  position: relative; }
 
-.sub-menu {
-  visibility: hidden;
-  /* hides sub-menu */
+
+
+
+.sub-menu-parent { position: relative; }
+
+.sub-menu { 
+  visibility: hidden; /* hides sub-menu */
   opacity: 0;
-  position: absolute;
-                    /* needs this in 
-relation to parent */
+  position: absolute; /* needs this in 
+  relation to parent */
+
+
   width: 100%;
+  
   z-index: -1;
-  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s; }
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
 
 .sub-menu-parent:focus .sub-menu,
 .sub-menu-parent:focus-within .sub-menu,
 .sub-menu-parent:hover .sub-menu {
-  visibility: visible;
-  /* shows sub-menu */
+  visibility: visible; /* shows sub-menu */
   opacity: 1;
   z-index: 1;
   transform: translateY(0%);
-  transition-delay: 0s, 0s, 0.3s;
-  /* this removes the transition delay so the menu will be visible while the other styles transition */ }
-
+  transition-delay: 0s, 0s, 0.3s; /* this removes the transition delay so the menu will be visible while the other styles transition */
+}
 /* .sub-menu-parent:hover .space{ */
 /*     display: inline-block; margin: 0; text-align: left; */
 /* } */
 /* .sub-menu-parent:hover > ul > .space{ */
 /*     display: inline-block; margin: 0; text-align: right; */
 /* } */
-nav a {
-  color: #E00;
-  display: block;
-  padding: 0.5em 1em;
-  text-decoration: none; }
 
-nav a:hover {
-  color: #F55; }
 
+
+nav a { color: #E00; display: block; padding: 0.5em 1em; text-decoration: none; }
+nav a:hover { color: #F55; }
 nav ul,
-nav ul li {
-  list-style-type: none;
-  padding: 0;
-  margin: 0; }
+nav ul li { list-style-type: none; padding: 0; margin: 0; }
 
-nav > ul {
-  background: #EEE;
-  text-align: center; }
+nav > ul { background: #EEE; text-align: center; }
+nav > ul > li { display: inline-block; border-left: solid 1px #aaa; }
 
-nav > ul > li {
-  display: inline-block;
-  border-left: solid 1px #aaa; }
+nav > ul > li > ul > li{ display: block; border:solid 2px #aaa; border-width:0px 1px;}
+nav > ul > li > ul > li:nth-child(2) { display: block; border-top: solid 2px #aaa;}
+nav > ul > li > ul > li:last-child { display: block; border-bottom: solid 2px #aaa;}
+nav > ul > li > ul > .space{ background-color:$color-background; display:block; border:none;}
 
-nav > ul > li > ul > li {
-  display: block;
-  border: solid 2px #aaa;
-  border-width: 0px 1px; }
 
-nav > ul > li > ul > li:nth-child(2) {
-  display: block;
-  border-top: solid 2px #aaa; }
-
-nav > ul > li > ul > li:last-child {
-  display: block;
-  border-bottom: solid 2px #aaa; }
-
-nav > ul > li > ul > .space {
-  background-color: #ecf0f1;
-  display: block;
-  border: none; }
 
 .sub-menu {
-  background: #DDD; }
+  background: #DDD;
+}
 
-/*# sourceMappingURL=my-styles.css.map */
