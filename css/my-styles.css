@@ -123,8 +123,11 @@ a {
 .card .container {
   padding: 2px 16px; }
 
-.card .img-container {
+.card .img-container, .card .img-container-product {
   padding: 2px 16px; }
+  .card .img-container-product {
+    text-align: center;
+    padding-top: 16px; }
 
 /*# sourceMappingURL=my-styles.css.map */
 /* Might be cool for future projects, more fun as well */
@@ -226,5 +229,9 @@ nav > ul > li > ul > .space {
 
 .sub-menu {
   background: #DDD; }
+
+.product-fanciness {
+  text-align: center;
+  margin: 10px 100px; }
 
 /*# sourceMappingURL=my-styles.css.map */

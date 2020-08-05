@@ -1,9 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,300);
 /* Mixins */
 
-$color-background : #ecf0f1;
+$clr-background : #ecf0f1;
+$clr-1 : #00bcd4;
+$clr-2 : #b2ebf2;
+$clr-3 : #ff5722;
+$clr-4 : #dd2c00;
 body {
-  background-color: $color-background;
+  background-color: $clr-background;
   font-family: "Raleway", sans-serif;
   left: 0;
   overflow-x: hidden;
@@ -17,9 +21,16 @@ h1 {
   text-align: center; }
 
 a {
-  color: #fff;
+  color: #000;
   text-decoration: none;
-  /* text-transform: uppercase; */ }
+/* text-transform: uppercase; */ }
+a:hover {
+    color: $clr-1;
+    text-decoration: none;
+/* text-transform: uppercase; */ }
+ul > li {
+    margin-bottom:10px;
+}
 
 .l-row {
   margin: 0 auto;
@@ -91,7 +102,8 @@ a {
   /* add column wrap around card */
   float: left;
   width: 25%;
-  padding: 0 10px; }
+
+}
 
 /* When adding new row, there'll be extra padding, remove them*/
 .row {
@@ -114,7 +126,9 @@ a {
     margin-bottom: 20px; } }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s; }
+  transition: 0.3s;
+  margin: 0 10px;
+}
 
 .card:hover {
     box-shadow: 0 8px 16px 0 darkgrey;
@@ -126,6 +140,11 @@ a {
 
 .card .img-container {
     padding: 2px 16px;
+    &-product{
+        @extend .img-container;
+        text-align:center;
+        padding-top:16px;
+    }
 }
 
 /*# sourceMappingURL=my-styles.css.map */
@@ -201,7 +220,7 @@ nav > ul > li:first-child { border-left: none; }
 nav > ul > li > ul > li{ display: block; border:solid 2px #aaa; border-width:0px 1px;}
 nav > ul > li > ul > li:nth-child(2) { display: block; border-top: solid 2px #aaa;}
 nav > ul > li > ul > li:last-child { display: block; border-bottom: solid 2px #aaa;}
-nav > ul > li > ul > .space{ background-color:$color-background; display:block; border:none;}
+nav > ul > li > ul > .space{ background-color:$clr-background; display:block; border:none;}
 
 
 
@@ -209,3 +228,9 @@ nav > ul > li > ul > .space{ background-color:$color-background; display:block; 
   background: #DDD;
 }
 
+
+// Ardie's own additions
+.product-fanciness{
+    text-align:center;
+    margin:10px 100px;
+}
