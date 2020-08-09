@@ -234,3 +234,25 @@ nav > ul > li > ul > .space{ background-color:$clr-background; display:block; bo
     text-align:center;
     margin:10px 100px;
 }
+
+woodworkerSlides{
+    display:none;
+}
+
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
