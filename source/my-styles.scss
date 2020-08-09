@@ -118,12 +118,28 @@ ul > li {
   display: table;
   clear: both; }
 
+
+.mobile_link{
+    display:none;
+}
+
+.disabled-link-woodworking{
+    color:lightgray;
+}
+
+
 /* When it reduces to 600px*/
 @media screen and (max-width: 600px) {
   .column {
     width: 100%;
     display: block;
-    margin-bottom: 20px; } }
+    margin-bottom: 20px; }
+  .mobile_link {
+      display:block;
+      float:right;
+  }
+}
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;

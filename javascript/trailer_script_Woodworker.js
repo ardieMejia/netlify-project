@@ -11,7 +11,7 @@ $(document).ready(function(){
         'https://www.youtube.com/channel/UCRix1GJvSBNDpEFY561eSzw',
         'https://www.youtube.com/user/theartofweapons'
     ];
-
+    var allMobileLink = $('.mobile_link');
 
     var slides = $('img.woodworkerSlides');
 
@@ -27,8 +27,16 @@ $(document).ready(function(){
         trailer_woodworkerLinks.eq(i).on("click",i,function(event){
             var index = event.data;
             showSlides(index);
+            // for mobile behaviour
+            // we trick mobile by having 2 levels of 'hiding' behaviour, display:none and removing href=''
+            allMobileLink.parent().attr('href','');
+            allMobileLink.parent().attr('class','disabled-link-woodworking');
+            allMobileLink.eq(event.data).parent().attr('href',allHrefs[event.data]);
+            allMobileLink.eq(event.data).parent().removeClass('disabled-link-woodworking');
         });
     }
+
+
 
 
     for(var i=0;i<7;i++){
