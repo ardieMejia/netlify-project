@@ -43,8 +43,13 @@ $(document).ready(function(){
         trailer_woodworkerLinks.eq(i).on("dblclick",i,function(event){
             console.log('called double click');
             console.log(event.data);
-            trailer_woodworkerLinks.eq(event.data).parent("a").attr('href',allHrefs[event.data]).trigger('click');
-
+            trailer_woodworkerLinks.eq(event.data).parent("a").attr('href',allHrefs[event.data]);
+            // why cant this be oneline n more simple!! 
+            setTimeout(
+                function(){
+                    trailer_woodworkerLinks.eq(event.data).parent("a").removeAttr('href');
+                          }
+                ,2000);
         });
     }
 
