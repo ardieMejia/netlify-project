@@ -102,6 +102,10 @@ ul > li {
   float: left;
   width: 25%; }
 
+.column-half-Commands {
+  float: left;
+  width: 50%; }
+
 /* When adding new row, there'll be extra padding, remove them*/
 .row {
   margin: 0 -5px;
@@ -127,6 +131,11 @@ ul > li {
     display: block;
     margin-bottom: 20px; }
 
+  .column-half-Commands {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px; }
+
   .mobile_link {
     display: block;
     float: right; } }
@@ -135,6 +144,9 @@ ul > li {
   transition: 0.3s;
   margin: 0 10px; }
 
+.card-darkGray {
+  background-color: slategray; }
+
 .card:hover {
   box-shadow: 0 8px 16px 0 darkgrey; }
 
@@ -142,7 +154,7 @@ ul > li {
   padding: 2px 16px; }
 
 .card .img-container, .card .img-container-product {
-  padding: 2px 16px; }
+  padding: 8px 16px; }
   .card .img-container-product {
     text-align: center;
     padding-top: 16px; }
@@ -271,5 +283,13 @@ woodworkerSlides {
     opacity: .4; }
   to {
     opacity: 1; } }
+.someSyntax {
+  background-color: LightBlue;
+  font: bold 20px Baskerville;
+  margin: 5px;
+  padding: 5px; }
+
+.li-forgot-commands {
+  list-style: none outside; }
 
 /*# sourceMappingURL=my-styles.css.map */

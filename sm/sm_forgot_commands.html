@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My app</title>
+        <script
+			      src="https://code.jquery.com/jquery-3.4.1.js"
+			      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			      crossorigin="anonymous"></script>
+        <script type="text/javascript" src="/javascript/my-first.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/my-styles.css">
+        
+		    
+
+
+
+    </head>
+    <body>
+        
+
+
+
+
+
+
+        <nav>
+            <ul>
+                <li class="sub-menu-parent" tab-index="0">
+                    <a href="/index.php">Home</a>
+                    <div class="space"></div>
+                    <ul class="sub-menu">
+                        <!--  
+                             <li class="space"><a></a></li> empty space hack 
+                             <li><a href="#">Sub Item 1</a></li>
+                             <li><a href="#">Sub Item 2</a></li>
+                             <li><a href="#">Sub Item 3</a></li>
+                             <li><a href="#">Sub Item 4</a></li>
+                        -->
+                    </ul>
+                </li>
+                <li class="sub-menu-parent" tab-index="0">
+                    <a href="#">Image Gallery</a>
+                    <ul class="sub-menu">
+                        <li class="space"><a></a></li> <!-- empty space hack -->
+                        <li><a href="#">Search</a></li>
+                        <li><a href="/sm/sm_image_gallery.html">My handmade tools</a></li>
+                        <li><a href="#">Command lines I keep forgetting</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu-parent" tab-index="0">
+                    <a href="#">Information</a>
+                    <div class="space"></div>
+                    <ul class="sub-menu">
+                        <li class="space"><a></a></li> <!-- empty space hack -->
+                        <li><a href="/sm/sm_pdfs_books.html">Books</a></li>
+                        <li><a href="/sm/sm_links.html">Links</a></li>
+                        <li><a href="/sm/sm_archive.html">Archive</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul></li>
+            </ul>
+        </nav>
+
+
+        <h1>My Woodworking Projects 2020</h1>
+        <div class="row">
+            <div class="column-half-Commands">
+                <div class="card card-darkGray">
+
+                    <div class="container">
+
+                        <div class="img-container">
+                            <img src="../images/moreForgottenCommands/why-so-difficult.png" alt="tenon saw" style="width:100%">
+                        </div>
+
+                        <p style="float-left:auto;float-right:auto;margin:20px 50px">
+
+                            That <span class="someSyntax">-print0 | xargs -0</span> part always gets me. This command is so important, this should be in permanent memory by now, but its not! (confused face). 
+                        </p>
+
+                <p style="float-left:auto;float-right:auto;margin:20px 50px">Nowadays, I came up with a strategy inside my head, that the key to learning new Linux commands once you get used to them, is to look for a ‘dominating’ tool in a single line. In the example above, xargs is the dominating tool. So its best to not get bamboozled, and realize all that <span class="someSyntax">-print0 | xargs -0</span> is just xargs fluff.</p>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="column-half-Commands">
+                <div class="card card-darkGray">
+
+                    <div class="container">
+
+                        <div class="img-container">
+                            <img src="../images/moreForgottenCommands/why-wget-cant-remember.png" alt="tenon saw" style="width:100%">
+                        </div>
+
+            <p style="float-left:auto;float-right:auto;margin:20px 50px">
+            This wget is not that important for me, but every time I do need it, its never anywhere on my local system but online.
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="row">
+            <div class="column-half-Commands">
+                <div class="card card-darkGray">
+
+                    <div class="container">
+
+                        <div class="img-container">
+                            <img src="../images/moreForgottenCommands/why-rsync-silly-damn.png" alt="tenon saw" style="width:100%">
+                        </div>
+
+                        <p style="float-left:auto;float-right:auto;margin:20px 50px">
+
+                            <ul class="li-forgot-commands">
+                                <li>
+                                    <span class="someSyntax">-a:</span> Archive mode. Plenty of explanation online. To put it simple, this is perfect for backups (mirrors everything: timestamps, permissions etc..) AND makes future backups easier (Eg: updates instead of redundant copies).
+                                </li>
+                                <li>
+                                    <span class="someSyntax">-v:</span> verbose  
+                                </li>
+                                <li>
+                                    <span class="someSyntax">-z:</span> compress during transfer (not important)
+                                </li>
+                                <ul>
+                                    <h3>
+
+                                        Further Notes:
+                                    </h3>
+                                    <li>
+                                        When using pattern-matching, rsync include/exclude behaviour can be weird. This stackoverflow advice explains well, but adds that it is quirky and not intuitive.
+                                    </li>
+                                    <li>
+                                        Forget reading into everything here! Instead, when using both, always put --include= before --exclude by habit.
+                                    </li>
+                                    <li>
+                                        And since rsync includes files by default, so:
+                                        <ul>
+                                            <li>
+                                                When you want to backup everything except certain filetypes: --exclude only
+                                            </li>
+                                            <li>
+                                                When you want to exclude everything except certain filetypes: --include first, then --exclude
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </ul>
+
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="column-half-Commands">
+                <div class="card card-darkGray">
+
+                    <div class="container">
+
+                        <div class="img-container">
+                            <img src="../images/moreForgottenCommands/why-just.png" alt="tenon saw" style="width:100%">
+                        </div>
+
+                        <p style="float-left:auto;float-right:auto;margin:20px 50px">
+                            rsync related (always important)
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </body> 
+</html>
+
+</html>
+
+
+
+
+
