@@ -106,6 +106,11 @@ ul > li {
   float: left;
   width: 50%; }
 
+.column-RSS {
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%; }
+
 /* When adding new row, there'll be extra padding, remove them*/
 .row {
   margin: 0 -5px;
@@ -138,7 +143,12 @@ ul > li {
 
   .mobile_link {
     display: block;
-    float: right; } }
+    float: right; }
+
+  .sub-menu-parent-left {
+    left: 0px;
+    top: 10px;
+    float: left; } }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
@@ -150,7 +160,18 @@ ul > li {
 .card:hover {
   box-shadow: 0 8px 16px 0 darkgrey; }
 
+.RSScard {
+  /* box-shadow: 0 4px 8px 0 $clr-2; */
+  transition: 0.3s;
+  margin: 0 10px; }
+
+.RSScard:hover {
+  box-shadow: 0 8px 16px 0 darkgrey; }
+
 .card .container {
+  padding: 2px 16px; }
+
+.RSScard .container {
   padding: 2px 16px; }
 
 .card .img-container, .card .img-container-product {
@@ -182,12 +203,18 @@ ul > li {
   position: relative;
   width: 150px; }
 
+.sub-menu-parent-left {
+  float: left;
+  position: fixed;
+  width: 150px;
+  left: 0px; }
+
 .sub-menu {
   visibility: hidden;
   /* hides sub-menu */
   opacity: 0;
   position: absolute;
-                    /* needs this in 
+                    /* needs this in
 relation to parent */
   left: -100px;
   /*hack to center and elevate submenu from navigation*/
@@ -291,5 +318,33 @@ woodworkerSlides {
 
 .li-forgot-commands {
   list-style: none outside; }
+
+/* for the RSS <div> */
+.feedEkList {
+  width: 100%;
+  list-style: none outside none;
+  background-color: #FFFFFF;
+  border: 1px solid #D3CAD7;
+  padding: 4px 6px;
+  color: #3E3E3E; }
+
+.feedEkList li {
+  border-bottom: 1px solid #D3CAD7;
+  padding: 5px; }
+
+.feedEkList li:last-child {
+  border-bottom: none; }
+
+.itemTitle a {
+  font-weight: bold;
+  color: #4EBAFF !important;
+  text-decoration: none; }
+
+.itemTitle a:hover {
+  text-decoration: underline; }
+
+.itemDate {
+  font-size: 11px;
+  color: #AAAAAA; }
 
 /*# sourceMappingURL=my-styles.css.map */
