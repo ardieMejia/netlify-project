@@ -18,7 +18,11 @@ $(document).ready(function(){
 
 
 
+    var FEED_URL = 'https://paulsellers.com/woodworking-blog/paul-sellers-blog/feed/';
 
+    $('#divRss').FeedEk({
+        FeedUrl:FEED_URL
+    });
 
 
 
