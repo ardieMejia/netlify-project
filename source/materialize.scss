@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+// Color
+@import "x_components/color-variables";
+@import "x_components/color-classes";
+
+// Variables;
+@import "x_components/variables";
+
+// Reset
+@import "x_components/normalize";
+
+// x_components
+// commented below, means I can use it like some bloated library shit
+// like bloated Java libraries shit
+// @import "x_components/global";
+// @import "x_components/badges";
+// @import "x_components/icons-material-design";
+// @import "x_components/grid";
+// @import "x_components/navbar";
+// @import "x_components/typography";
+// @import "x_components/transitions";
+// @import "x_components/cards";
+// @import "x_components/toast";
+// @import "x_components/tabs";
+// @import "x_components/tooltip";
+// @import "x_components/buttons";
+// @import "x_components/dropdown";
+// @import "x_components/waves";
+// @import "x_components/modal";
+// @import "x_components/collapsible";
+// @import "x_components/chips";
+// @import "x_components/materialbox";
+// @import "x_components/forms/forms";
+// @import "x_components/table_of_contents";
+// @import "x_components/sidenav";
+// @import "x_components/preloader";
+// @import "x_components/slider";
+// @import "x_components/carousel";
+// @import "x_components/tapTarget";
+// @import "x_components/pulse";
+// @import "x_components/datepicker";
+// @import "x_components/timepicker";
