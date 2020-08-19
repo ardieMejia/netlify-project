@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,300);
+@import "x_components/color-variables";
 /* Mixins */
 
 $clr-background : #ecf0f1;
@@ -7,7 +8,8 @@ $clr-2 : #b2ebf2;
 $clr-3 : #ff5722;
 $clr-4 : #dd2c00;
 body {
-  background-color: $clr-background;
+    // I hate sass, it looks like a function of strings
+    background-color:color("cyan", "lighten-4");
   font-family: "Raleway", sans-serif;
   left: 0;
   overflow-x: hidden;
@@ -72,26 +74,32 @@ ul > li {
 .cont-navLeft {
   left: -200px; }
 
+/* ----- old menu not sure
 .nav-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 100%; }
-  .nav-menu .title {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; }
+.nav-menu .title {
     color: #fff;
     font-size: 18px;
     padding: 12px 0;
     text-align: center; }
-  .nav-menu li {
+.nav-menu li {
     border-bottom: 1px solid #2cc36c; }
-    .nav-menu li a {
-      display: block;
-      padding: 12px 0 12px 15px;
-      width: 185px; }
-    .nav-menu li a:hover {
-      background-color: #239c56; }
+.nav-menu li a {
+    display: block;
+    padding: 12px 0 12px 15px;
+    width: 185px; }
+.nav-menu li a:hover {
+    background-color: #239c56; } */
 
-/* Push body and nav */
+
+/* Push body and nav
+this is not a trivial naming of class.
+the css class in this case functions like a function-name
+so, push-right can be used in Javascript like a function behaviour
+*/
 .push-right {
   left: 200px; }
 
@@ -105,10 +113,11 @@ ul > li {
 
 }
 
+/* ----- old menu not sure
 .column-half-Commands{
     float: left;
     width: 50%;
-}
+} */
 
 .column-RSS{
     margin-left:auto;
@@ -158,13 +167,18 @@ ul > li {
       left:0px;
       top:10px;
       float:left;
+      z-index:100; // please avoid reliance on z-index
+  }
+  .card{
+      margin: 0 60px !important;
   }
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px 0 color("cyan", "darken-3");
   transition: 0.3s;
-  margin: 0 10px;
+  margin: 0 20px;
+  background-color:color("deep-purple","lighten-5");
 }
 
 .card-darkGray{
@@ -172,7 +186,7 @@ ul > li {
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 darkgrey;
+    box-shadow: 0 12px 24px 0 color("cyan", "darken-3");
 }
 
 .RSScard {
@@ -194,13 +208,19 @@ ul > li {
 }
 
 .card .img-container {
-    padding: 8px 16px;
+    margin: 0px;
     &-product{
         @extend .img-container;
         text-align:center;
-        padding-top:16px;
+        margin-top:10px;
+        & img{
+            margin-top:10px;
+        }
     }
+
 }
+
+
 
 /*# sourceMappingURL=my-styles.css.map */
 
@@ -228,32 +248,7 @@ ul > li {
 
 
 
-.sub-menu-parent { position: relative; width:150px/*added for consistency*/;  }
-.sub-menu-parent-left { float:left; position: fixed; width:150px; left:0px;  }
 
-.sub-menu {
-  visibility: hidden; /* hides sub-menu */
-  opacity: 0;
-  position: absolute; /* needs this in
-  relation to parent */
-  left:-100px;                   /*hack to center and elevate submenu from navigation*/
-  width: 300px;
-
-  z-index: 30;
-  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
-}
-
-.sub-menu-parent:focus .sub-menu,
-.sub-menu-parent:focus-within .sub-menu,
-.sub-menu-parent:hover .sub-menu {
-  visibility: visible; /* shows sub-menu */
-  opacity: 1;
-  z-index: 1;
-
-  position:absolute;
-  transform: translateY(0%);
-  transition-delay: 0s, 0s, 0.3s; /* this removes the transition delay so the menu will be visible while the other styles transition */
-}
 /* .sub-menu-parent:hover .space{ */
 /*     display: inline-block; margin: 0; text-align: left; */
 /* } */
@@ -263,32 +258,89 @@ ul > li {
 
 
 
-nav a { color: #E00; display: block; padding: 0.5em 1em; text-decoration: none; }
-nav a:hover { color: #F55; }
+.sub-menu-parent { position: relative; width:150px;/*added for consistency*/}
+.sub-menu-parent-left { float:left; position: fixed; width:150px; left:0px;  }
+
+.sub-menu {
+    visibility: hidden; /* hides sub-menu */
+    opacity: 0;
+    position: absolute; /* needs this in
+  relation to parent */
+    left:-100px;                   /*hack to center and elevate submenu from navigation*/
+    width: 300px;
+
+    z-index: 30;
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.sub-menu-parent:focus .sub-menu,
+.sub-menu-parent:focus-within .sub-menu,
+.sub-menu-parent:hover .sub-menu {
+    visibility: visible; /* shows sub-menu */
+    opacity: 1;
+    z-index: 1;
+
+    position:absolute;
+    transform: translateY(15px);
+    transition-delay: 0s, 0s, 0.3s; /* this removes the transition delay so the menu will be visible while the other styles transition */
+}
+
+/*
+on width change
+@media
+rss icon = push away from top
+nav > li (separated by class, coz of ad-hoc RSS) = reduce margin/padding
+         = replace words with images (maybe)
+         = make all 2nd level ul&li smaller and this li center aligned and pushed away from top
+*/
+
+/* When it reduces to 600px*/
+@media screen and (max-width: 600px) {
+    .sub-menu-parent-left { top:50px;  } // otherwise known as nav > ul > li
+    .sub-menu-parent { // otherwise ALSO known as nav > ul > li
+        right:0px; 
+        width: 25%;
+        z-index: 30;
+        border-left:none;
+        }
+    .sub-menu-parent > ul {
+        left:0px;
+        width: 100%;
+        z-index: 40;
+
+        }
+}
+
+
+
+
+nav a { color:black;     /* background-color:color("cyan", "lighten-4"); without this, it behaves properly, I dont get it?? */ display: block; padding: 0.5em 1em; text-decoration: none; }
+nav a:hover { color: color("pink","accent-4") }
 nav ul,
 nav ul li { list-style-type: none; padding: 0; margin: 0; }
 
 
-nav > ul { background: #EEE; text-align: center; }
-nav > ul > li { display: inline-block; border-left: solid 1px #aaa; }
+nav > ul { background: color("cyan", "lighten-4"); text-align: center; }
+nav > ul > li { display: inline-block; border-left: solid 1px black; }
 nav > ul > li:first-child { border-left: none; }
 
-nav > ul > li > ul > li{ display: block; border:solid 2px #aaa; border-width:0px 1px;}
-nav > ul > li > ul > li:nth-child(2) { display: block; border-top: solid 2px #aaa;}
-nav > ul > li > ul > li:last-child { display: block; border-bottom: solid 2px #aaa;}
-nav > ul > li > ul > .space{ background-color:$clr-background; display:block; border:none;}
+nav > ul > li > ul > li{ display: block; border:solid 2px gray; border-width:0px 2px;}
+nav > ul > li > ul > li:nth-child(2) { display: block; border-top: solid 2px gray;}
+nav > ul > li > ul > li:last-child { display: block; border-bottom: solid 2px gray;}
+nav > ul > li > ul > .space{ background-color:color("cyan", "lighten-4"); display:block; border:none;}
 
 
 
 .sub-menu {
-  background: #DDD;
+    background: #DDD;
 }
 
 
 // Ardie's own additions
 .product-fanciness{
     text-align:center;
-    margin:10px 100px;
+    margin:20px 100px;
+    color:gray;
 }
 
 woodworkerSlides{

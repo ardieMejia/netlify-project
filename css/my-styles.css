@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,300);
 /* Mixins */
 body {
-  background-color: #ecf0f1;
+  background-color: #b2ebf2;
   font-family: "Raleway", sans-serif;
   left: 0;
   overflow-x: hidden;
@@ -67,30 +67,30 @@ ul > li {
 .cont-navLeft {
   left: -200px; }
 
+/* ----- old menu not sure
 .nav-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 100%; }
-
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; }
 .nav-menu .title {
-  color: #fff;
-  font-size: 18px;
-  padding: 12px 0;
-  text-align: center; }
-
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 0;
+    text-align: center; }
 .nav-menu li {
-  border-bottom: 1px solid #2cc36c; }
-
+    border-bottom: 1px solid #2cc36c; }
 .nav-menu li a {
-  display: block;
-  padding: 12px 0 12px 15px;
-  width: 185px; }
-
+    display: block;
+    padding: 12px 0 12px 15px;
+    width: 185px; }
 .nav-menu li a:hover {
-  background-color: #239c56; }
-
-/* Push body and nav */
+    background-color: #239c56; } */
+/* Push body and nav
+this is not a trivial naming of class.
+the css class in this case functions like a function-name
+so, push-right can be used in Javascript like a function behaviour
+*/
 .push-right {
   left: 200px; }
 
@@ -102,10 +102,11 @@ ul > li {
   float: left;
   width: 25%; }
 
-.column-half-Commands {
-  float: left;
-  width: 50%; }
-
+/* ----- old menu not sure
+.column-half-Commands{
+    float: left;
+    width: 50%;
+} */
 .column-RSS {
   margin-left: auto;
   margin-right: auto;
@@ -148,17 +149,22 @@ ul > li {
   .sub-menu-parent-left {
     left: 0px;
     top: 10px;
-    float: left; } }
+    float: left;
+    z-index: 100; }
+
+  .card {
+    margin: 0 60px !important; } }
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px 0 #00838f;
   transition: 0.3s;
-  margin: 0 10px; }
+  margin: 0 20px;
+  background-color: #ede7f6; }
 
 .card-darkGray {
   background-color: slategray; }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 darkgrey; }
+  box-shadow: 0 12px 24px 0 #00838f; }
 
 .RSScard {
   /* box-shadow: 0 4px 8px 0 $clr-2; */
@@ -175,10 +181,12 @@ ul > li {
   padding: 2px 16px; }
 
 .card .img-container, .card .img-container-product {
-  padding: 8px 16px; }
+  margin: 0px; }
   .card .img-container-product {
     text-align: center;
-    padding-top: 16px; }
+    margin-top: 10px; }
+    .card .img-container-product img {
+      margin-top: 10px; }
 
 /*# sourceMappingURL=my-styles.css.map */
 /* Might be cool for future projects, more fun as well */
@@ -199,9 +207,16 @@ ul > li {
   mix-blend-mode: lighten;
   /* background: rgba(161, 44, 199, 0.31); */ }
 
+/* .sub-menu-parent:hover .space{ */
+/*     display: inline-block; margin: 0; text-align: left; */
+/* } */
+/* .sub-menu-parent:hover > ul > .space{ */
+/*     display: inline-block; margin: 0; text-align: right; */
+/* } */
 .sub-menu-parent {
   position: relative;
-  width: 150px; }
+  width: 150px;
+  /*added for consistency*/ }
 
 .sub-menu-parent-left {
   float: left;
@@ -214,7 +229,7 @@ ul > li {
   /* hides sub-menu */
   opacity: 0;
   position: absolute;
-                    /* needs this in
+                      /* needs this in
 relation to parent */
   left: -100px;
   /*hack to center and elevate submenu from navigation*/
@@ -230,24 +245,42 @@ relation to parent */
   opacity: 1;
   z-index: 1;
   position: absolute;
-  transform: translateY(0%);
+  transform: translateY(15px);
   transition-delay: 0s, 0s, 0.3s;
   /* this removes the transition delay so the menu will be visible while the other styles transition */ }
 
-/* .sub-menu-parent:hover .space{ */
-/*     display: inline-block; margin: 0; text-align: left; */
-/* } */
-/* .sub-menu-parent:hover > ul > .space{ */
-/*     display: inline-block; margin: 0; text-align: right; */
-/* } */
+/*
+on width change
+@media
+rss icon = push away from top
+nav > li (separated by class, coz of ad-hoc RSS) = reduce margin/padding
+         = replace words with images (maybe)
+         = make all 2nd level ul&li smaller and this li center aligned and pushed away from top
+*/
+/* When it reduces to 600px*/
+@media screen and (max-width: 600px) {
+  .sub-menu-parent-left {
+    top: 50px; }
+
+  .sub-menu-parent {
+    right: 0px;
+    width: 25%;
+    z-index: 30;
+    border-left: none; }
+
+  .sub-menu-parent > ul {
+    left: 0px;
+    width: 100%;
+    z-index: 40; } }
 nav a {
-  color: #E00;
+  color: black;
+  /* background-color:color("cyan", "lighten-4"); without this, it behaves properly, I dont get it?? */
   display: block;
   padding: 0.5em 1em;
   text-decoration: none; }
 
 nav a:hover {
-  color: #F55; }
+  color: #c51162; }
 
 nav ul,
 nav ul li {
@@ -256,31 +289,31 @@ nav ul li {
   margin: 0; }
 
 nav > ul {
-  background: #EEE;
+  background: #b2ebf2;
   text-align: center; }
 
 nav > ul > li {
   display: inline-block;
-  border-left: solid 1px #aaa; }
+  border-left: solid 1px black; }
 
 nav > ul > li:first-child {
   border-left: none; }
 
 nav > ul > li > ul > li {
   display: block;
-  border: solid 2px #aaa;
-  border-width: 0px 1px; }
+  border: solid 2px gray;
+  border-width: 0px 2px; }
 
 nav > ul > li > ul > li:nth-child(2) {
   display: block;
-  border-top: solid 2px #aaa; }
+  border-top: solid 2px gray; }
 
 nav > ul > li > ul > li:last-child {
   display: block;
-  border-bottom: solid 2px #aaa; }
+  border-bottom: solid 2px gray; }
 
 nav > ul > li > ul > .space {
-  background-color: #ecf0f1;
+  background-color: #b2ebf2;
   display: block;
   border: none; }
 
@@ -289,7 +322,8 @@ nav > ul > li > ul > .space {
 
 .product-fanciness {
   text-align: center;
-  margin: 10px 100px; }
+  margin: 20px 100px;
+  color: gray; }
 
 woodworkerSlides {
   display: none; }
