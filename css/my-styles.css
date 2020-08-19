@@ -101,6 +101,10 @@ so, push-right can be used in Javascript like a function behaviour
   /* add column wrap around card */
   float: left;
   width: 25%; }
+  .column-half {
+    width: 50%;
+    float: left;
+    display: flex; }
 
 /* ----- old menu not sure
 .column-half-Commands{
@@ -137,7 +141,7 @@ so, push-right can be used in Javascript like a function behaviour
     display: block;
     margin-bottom: 20px; }
 
-  .column-half-Commands {
+  .column-half {
     width: 100%;
     display: block;
     margin-bottom: 20px; }
@@ -159,9 +163,6 @@ so, push-right can be used in Javascript like a function behaviour
   transition: 0.3s;
   margin: 0 20px;
   background-color: #ede7f6; }
-
-.card-darkGray {
-  background-color: slategray; }
 
 .card:hover {
   box-shadow: 0 12px 24px 0 #00838f; }

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# awk script to insert lines in multiple files
+# becoz no -inplace insert in awk (like sed -i)
+# and wildcard *html is tricky (maybe possible?)
+# but the end solution is actually quite smooth
+
+echo '---------- '$1' ----------'
+
+#awk '{if(/<\/body>/)\
+#      print "<script type=\"text\/javascript\" src=\"js\/materialize.min.js\"><\/script>\n"$0;\
+#    else\
+#      print $0;\
+#}' $1 > tmp.html && mv tmp.html $1 && echo "SUCCESS processing "$1
+
+awk '{if(/my-styles/){\
+        print $0;\
+        print "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">";\
+        print "<link type=\"text/css\" rel=\"stylesheet\" href=\"css/materialize.css\"  media=\"screen,projection\"/>";\
+     }\
+     else\
+        print $0;\
+     }' $1 > tmp.html && mv tmp.html $1 && echo "SUCCESS processing "$1
+
+
+
+
+
+
+
+
